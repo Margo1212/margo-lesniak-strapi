@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "technologies",
+  "info": {
+    "singularName": "technologie",
+    "pluralName": "technologies",
+    "displayName": "Technologie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tech": {
+      "displayName": "tech",
+      "type": "component",
+      "repeatable": true,
+      "component": "component.tech"
+    }
+  }
+}

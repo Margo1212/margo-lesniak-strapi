@@ -11,10 +11,22 @@ export interface ComponentQuestion extends Schema.Component {
   };
 }
 
+export interface ComponentTech extends Schema.Component {
+  collectionName: 'components_component_teches';
+  info: {
+    displayName: 'tech';
+  };
+  attributes: {
+    name: Attribute.String;
+    icon: Attribute.Media;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'component.question': ComponentQuestion;
+      'component.tech': ComponentTech;
     }
   }
 }
