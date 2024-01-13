@@ -891,6 +891,36 @@ export interface ApiPostPost extends Schema.CollectionType {
   };
 }
 
+export interface ApiStageStage extends Schema.CollectionType {
+  collectionName: 'stages';
+  info: {
+    singularName: 'stage';
+    pluralName: 'stages';
+    displayName: 'Stage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    stage: Attribute.Component<'component.stage', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::stage.stage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::stage.stage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTechnologieTechnologie extends Schema.CollectionType {
   collectionName: 'technologies';
   info: {
@@ -944,6 +974,7 @@ declare module '@strapi/types' {
       'api::comment.comment': ApiCommentComment;
       'api::faq.faq': ApiFaqFaq;
       'api::post.post': ApiPostPost;
+      'api::stage.stage': ApiStageStage;
       'api::technologie.technologie': ApiTechnologieTechnologie;
     }
   }

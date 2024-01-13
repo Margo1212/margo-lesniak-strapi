@@ -11,6 +11,19 @@ export interface ComponentQuestion extends Schema.Component {
   };
 }
 
+export interface ComponentStage extends Schema.Component {
+  collectionName: 'components_component_stages';
+  info: {
+    displayName: 'stage';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.RichText;
+    stageNumber: Attribute.String;
+    icon: Attribute.Media;
+  };
+}
+
 export interface ComponentTech extends Schema.Component {
   collectionName: 'components_component_teches';
   info: {
@@ -26,6 +39,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'component.question': ComponentQuestion;
+      'component.stage': ComponentStage;
       'component.tech': ComponentTech;
     }
   }
