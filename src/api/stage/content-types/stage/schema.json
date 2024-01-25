@@ -4,18 +4,31 @@
   "info": {
     "singularName": "stage",
     "pluralName": "stages",
-    "displayName": "Stage"
+    "displayName": "stage"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "stage": {
-      "displayName": "stage",
-      "type": "component",
-      "repeatable": true,
-      "component": "component.stage"
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "stageNumber": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

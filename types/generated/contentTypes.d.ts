@@ -896,13 +896,16 @@ export interface ApiStageStage extends Schema.CollectionType {
   info: {
     singularName: 'stage';
     pluralName: 'stages';
-    displayName: 'Stage';
+    displayName: 'stage';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    stage: Attribute.Component<'component.stage', true>;
+    title: Attribute.String;
+    description: Attribute.Blocks;
+    stageNumber: Attribute.String;
+    icon: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
