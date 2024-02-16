@@ -912,6 +912,7 @@ export interface ApiPostPost extends Schema.CollectionType {
     >;
     description: Attribute.Text;
     slug: Attribute.UID<'api::post.post', 'title'>;
+    SEO: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
