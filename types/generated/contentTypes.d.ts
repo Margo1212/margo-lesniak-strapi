@@ -857,38 +857,6 @@ export interface ApiFaqFaq extends Schema.CollectionType {
   };
 }
 
-export interface ApiOfferOffer extends Schema.CollectionType {
-  collectionName: 'offers';
-  info: {
-    singularName: 'offer';
-    pluralName: 'offers';
-    displayName: 'offer';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Blocks;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::offer.offer',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::offer.offer',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiPostPost extends Schema.CollectionType {
   collectionName: 'posts';
   info: {
@@ -1008,7 +976,6 @@ declare module '@strapi/types' {
       'api::author.author': ApiAuthorAuthor;
       'api::comment.comment': ApiCommentComment;
       'api::faq.faq': ApiFaqFaq;
-      'api::offer.offer': ApiOfferOffer;
       'api::post.post': ApiPostPost;
       'api::stage.stage': ApiStageStage;
       'api::technologie.technologie': ApiTechnologieTechnologie;
