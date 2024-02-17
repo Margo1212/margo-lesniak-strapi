@@ -870,7 +870,7 @@ export interface ApiOfferOffer extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.RichText;
+    description: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
